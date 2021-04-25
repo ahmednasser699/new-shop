@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import React,{useState} from 'react'
+import {Router, Route, Switch } from 'react-router-dom'
+import Application from './application'
+import history from'./history'
+import Details from './components/details'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'animate.css'
+import 'hover.css'
+import './style.scss'
+import './media.scss'
+
+
+
+
+
+const App = () => {
+    const [data, setData] = useState([])
+    
+    const getItems = (items) => {
+        
+        setData(items)
+    }
+    return (
+        
+            < Router history = { history } >
+            <Switch>
+                <Route path="/" exact>
+                    <Application getItems={getItems} />
+                </Route>
+                <Route path='/products/:id'>
+                    <Details data={data} />
+                </Route>
+          </Switch>
+        </ Router>
+    )
 }
 
-export default App;
+export default App

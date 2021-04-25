@@ -1,0 +1,188 @@
+/*mobile screens*/
+/*xlarge screens*/
+@media (min-width: 1200px) {
+  body {
+    background-color: white; 
+  }
+ }
+ /*large screens*/
+@media (max-width: 1199px) {
+    .home{
+        #srch{
+            display: none;
+        }
+        input{
+          display: none;
+        }
+        .MuiFormControl-root{
+          display: none;
+        }
+        
+    }
+    .sub .form form span{
+      padding: 22px 22px;
+      padding-bottom: 23px;
+    }
+}
+/*medium screens*/
+@media (max-width: 991px) {
+.home{
+  .carousel-caption{
+    left: 20%;
+  }
+    h3{
+      font-size: 26px;
+    }
+    p{
+      font-size: 16px;
+    }
+}
+.welcome{
+  width: 100%;
+  h2{
+    font-size: 26px;
+  }
+}
+.products {
+    position: unset;
+    
+    
+    .section{
+      display: flex;
+     
+      .product{
+        align-items: unset;
+        .image{
+        height: 73%;
+        img{
+          height: 100%;
+        }
+      }
+      .info{
+        h4{
+          font-size: 20px;
+        }
+        p{
+          font-size: 10px;
+        }
+        div.hbtn {
+          position: absolute;
+          bottom: 50%;
+        }
+      }
+    }
+  }
+  
+  .section .product:first-of-type{
+    position: unset;
+    top: unset;
+    left: unset;
+  }
+  .section .product:last-of-type{
+    position: unset;
+    top: unset;
+    right: unset;
+  }
+  
+}
+.products #sec2{
+      margin-top: -20px;
+    }
+    .products .section:first-of-type{
+       margin-top: 150px;
+       margin-bottom: 0;
+    }
+    .sub {
+      display: block;
+      .head {
+        width: 100%;
+        margin-bottom: 30px;
+        p {
+          max-width: unset;
+          
+        }
+      }
+      .form {
+        width: 90%;
+        text-align: left;
+       
+        .send {
+          float: left;
+        }
+      }
+    }
+    .footer .topsec {
+      .image-logo {
+        width: 70%;
+        height: 70%;
+      }
+    }
+}
+@media (max-width:767px) {
+  .home ol {display: none !important;}
+  .welcome h2 {
+    width: 92%;
+  }
+  .products {
+    height: fit-content;
+    .section {
+      display: block;
+      height: unset;
+      .product {
+        width: 100% !important;
+        margin-bottom: 30px;
+      }
+    } 
+  }
+  .contact {
+    display: block;
+    .info {
+      max-width: 100%;
+      margin-bottom: 20px;
+    }
+    .contact-image {
+      width: 100%;
+    }
+  }
+  .sub {
+    .form span {
+      padding: 22px 22px 23px 22px !important;
+    }
+    p {font-size: 14px;}
+  }
+}
+@media (max-width: 575px) {
+  .activedimmer{
+    width: 100% !important;
+  }
+  .home {
+    height: 60vh;
+    .carousel-caption {
+        display: none;
+      }
+      .carousel-item img {
+        height: 60vh;
+      }
+  }
+  .welcome {
+    h2 {
+        font-size: 20px;
+        width: 100%;
+      }
+      p {
+        font-size: 12px;
+      }
+  }
+  .products .section .product {
+    padding: 0 !important;
+    .image{
+      img {width: 200px;}
+    }
+    .info div.hbtn {bottom: 33%;}
+  }
+  .sub {
+    .form .send {font-size: 11px;}
+    .head .h {font-size: 25px;}
+  }
+  .footer .botsec h5 {font-size: 11px;}
+}
