@@ -22,7 +22,7 @@ const Details = ({ data }) => {
     if (!data[id]) return <div>loading...</div>
    
     return (
-        <div>
+        <div >
             <Card className={classes.root}>
                            
                 <CardActionArea >

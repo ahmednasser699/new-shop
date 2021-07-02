@@ -5,6 +5,7 @@ import { Search, FavoriteBorder, Person, ShoppingCart } from '@material-ui/icons
 import ToggleModal from '../modals/toggel-modal'
 import CartModal from '../modals/cart-modal'
 
+
 const Home = ({cart, del, total}) => {
 
     useEffect(() => {
@@ -44,6 +45,18 @@ const Home = ({cart, del, total}) => {
         cartdimmer.classList.toggle('activedimmer')
         
     }
+    const product = () => {
+        let pros= document.getElementById('products')
+        pros.scrollIntoView({ behavior: "smooth" })
+    }
+    const contact = () => {
+        let cont = document.getElementById('contact')
+        cont.scrollIntoView({behavior:'smooth'})
+    }
+    const about = () => {
+        let detail = document.getElementById('about')
+        detail.scrollIntoView({behavior:'smooth'})
+    }
     return (
         <div className="home">
             <div className="navbar">
@@ -67,9 +80,9 @@ const Home = ({cart, del, total}) => {
                     
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mr-auto">
-                        <Nav.Link href="#home">About Us</Nav.Link>
-                        <Nav.Link href="#link">Products</Nav.Link>
-                        <Nav.Link href="#link">Contact Us</Nav.Link>
+                        <Nav.Link  onClick={about}>About Us</Nav.Link>
+                        <Nav.Link  onClick={product}>Products</Nav.Link>
+                        <Nav.Link  onClick={contact}>Contact Us</Nav.Link>
                         </Nav>
                         <span id='srch'><Search /></span>
                         

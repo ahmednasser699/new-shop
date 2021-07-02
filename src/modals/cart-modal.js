@@ -23,6 +23,11 @@ const CartModal = ({cartToggle, cart, del, total}) => {
                                 <div className="header">{ item.title}</div>
                                 <div style={{display:'flex', justifyContent:"space-between"}}>
                                     <span style={{ color: 'blue', fontWeight: '700' }}>{item.price}$</span>
+                                    <div style={{textAlign:'center', opacity:".8"}}>
+                                        quantity
+                                        <div>{ item.quantity}</div>
+
+                                    </div>
                                     <span onClick={()=>del(item)} style={{color:'#c12e2e', cursor:'pointer'}}><DeleteForever /></span>
                                 </div>
                             </div>

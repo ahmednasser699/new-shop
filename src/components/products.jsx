@@ -14,7 +14,7 @@ const Products = () => {
         })
     }, [])
     return (
-        <div className='products'>
+        <div className='products' id="products">
             <Container>
                 <div className="header">My new products</div>
                 <Grid item xs={12}>
@@ -65,7 +65,7 @@ const Products = () => {
                             </div>
                         <div className="info">
                             <h4>Soft Colors</h4>
-                                <p>LOREM IPSUM DOLOR SIT AMET IPSUM LOREM IPSUM DOLOR SIT AMET IPSUM LOREM IPSUM DOLOR SIT AMET IPSUM</p>
+                                <p>LOREM IPSUM DOLOR SIT AMET IPSUM LOREM IPSUM DOLOR SIT AMET</p>
                                 
                                    <div className="hbtn">
                                     <button id='btn'>Shop Now</button>
@@ -84,7 +84,7 @@ const Products = () => {
                             </div>
                         <div className="info">
                             <h4>Face Cloths</h4>
-                            <p>LOREM IPSUM DOLOR SIT AMET IPSUM LOREM IPSUM DOLOR SIT AMET IPSUM</p>
+                            <p>LOREM IPSUM DOLOR SIT AMET IPSUM LOREM IPSUM DOLOR SIT</p>
                               <div className="hbtn">
                                     <button id='btn'>Shop Now</button>
                                     <div id='bb'></div>

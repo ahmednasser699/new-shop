@@ -8,7 +8,7 @@ const Contact = () => {
     return (
        
         <Container>
-            <div className='contact' >
+            <div className='contact' id="contact">
             <div className="info">
                 <div className="header">contact info</div>
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum.</p>

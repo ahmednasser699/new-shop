@@ -16,7 +16,7 @@ const useStyles = makeStyles({
   },
 });
 
-const Items = ({ items, addToCart, decrease, cart}) => {
+const Items = ({ items, addToCart, decrease, increase, cart}) => {
     const [imageColor, setImageColor] = useState('black');
     const [itemId, setitemId] = useState('');
     const [filter, setFilter] = useState('bath')
@@ -30,16 +30,21 @@ const Items = ({ items, addToCart, decrease, cart}) => {
         
     }
     const count = (item) => {
-         let num = 0;
-        cart.forEach(element => {
-           
-            if (item === element) {
-                num++
+        
+        let num = 0;
+        let index = cart.indexOf(item)
+        
+            
+            cart.forEach(element => {
+               
+                if (item.id === element.id) {
+                    num=cart[index].quantity
+                }
+            });
+            if (num !== 0) {
+                return num
             }
-        });
-        if (num !== 0) {
-            return num
-        }
+        
         
     }
    
@@ -82,8 +87,8 @@ const Items = ({ items, addToCart, decrease, cart}) => {
                                 
                                 <div className='addbtns'>
                                     <Button className='chbtn' type="button" size="small" onClick={()=>decrease(item)} ><Remove /></Button>
-                                    <Typography variant='h4'>{ count(item)}</Typography>
-                                    <Button className='chbtn' type="button" size="small" onClick={()=>addToCart(item)} ><Add /></Button>
+                                    <Typography variant='h4'>{count(item)}</Typography>
+                                    <Button className='chbtn' type="button" size="small" onClick={()=>increase(item)} ><Add /></Button>
                                 </div>
                                 <CardContent>
                                 <div className="first-content">

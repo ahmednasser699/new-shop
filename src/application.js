@@ -248,24 +248,44 @@ const Application = ({ getItems }) => {
     }, [])
 
     const addToCart = (pro) => {
-        setCart([...cart, pro])
+        if (!cart.includes(pro)) {
+            pro.quantity=1
+            setCart([...cart, pro])
+       }
+            
+        
         
     }
+    const increase = (pro) => {
+        if (cart.includes(pro)) {
+            let newcart = [...cart];
+            let index = newcart.indexOf(pro);
+            newcart[index].quantity = newcart[index].quantity + 1
+            setCart(newcart)
+        }
+    }
     const decrease = (pro) => {
-        const arr = [...cart];
-        const index = arr.indexOf(pro);
-        if (index > -1) {
-            arr.splice(index, 1);
-            setCart(arr)
+        if (cart.includes(pro)) {
+            
+            let newcart = [...cart];
+             let index = newcart.indexOf(pro);
+             if (newcart[index].quantity <= 1) {
+                 del(pro)
+             } else {
+                 
+                 newcart[index].quantity= newcart[index].quantity-1;
+                 setCart(newcart)
+             }
         }
     }
     
     const del = (pro) => {
+        pro.quantity=0
        let arr=[];
         arr = [...cart];
         const index = arr.indexOf(pro);
        
-            arr.splice(index, 1);
+        arr.splice(index, 1);
         setCart(arr)
         
         
@@ -273,7 +293,7 @@ const Application = ({ getItems }) => {
     const total = () => {
         let tot = 0;
         cart.forEach(item => {
-            tot=tot+item.price
+            tot=tot+item.price*item.quantity
         })
         return tot
     }
@@ -283,7 +303,7 @@ const Application = ({ getItems }) => {
             <Home cart={cart} del={del} total={total} />
             <Welcome />
             <Products />
-            <Items items={Object.values(allitems)} cart={cart} addToCart={addToCart} decrease={decrease} />
+            <Items items={Object.values(allitems)} cart={cart} addToCart={addToCart} decrease={decrease} increase={increase} />
             <Contact/>
             <Sub/>
             <Footer />
